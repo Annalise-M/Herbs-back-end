@@ -7,10 +7,10 @@ client.connect();
 
 const app = require('./lib/app');
 
-const PORT = process.env.PORT || 7890;
+const PORT = process.env.PORT || 3000;
 
-app.get('/animals', async(req, res) => {
-  const data = await client.query('SELECT * from animals');
+app.get('/herbs', async(req, res) => {
+  const data = await client.query('SELECT * from herbs');
 
   res.json(data.rows);
 });

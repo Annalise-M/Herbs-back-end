@@ -16,7 +16,7 @@ describe('app routes', () => {
     // TODO: ADD CLOSE DB SCRIPT
   });
 
-  test('returns animals', async() => {
+  test('returns herbs', async() => {
 
     const expectation = [
       {

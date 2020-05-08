@@ -3,7 +3,7 @@ module.exports = [
     name: 'Lavender',
     kingdom: 'Plantae',
     type_species: 'Lavandula spica',
-    cool_factor: 7.5,
+    cool_factor: 7,
     poisonous: false,
   },
   {
