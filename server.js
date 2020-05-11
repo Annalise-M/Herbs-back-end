@@ -5,19 +5,19 @@ const client = require('./lib/client');
 // Initiate database connection
 client.connect();
 
-const app = require('./lib/client');
+const app = require('./lib/app');
 
 const PORT = process.env.PORT || 3000;
 
 //All Herbs
-app.get('./Herbs', async(req, res) => {
+app.get('/herbs', async(req, res) => {
   const data = await client.query('SELECT * from herbs');
 
   res.json(data.rows);
 });
 
 //just ONE Herb
-app.get('./Herbs/:name', async(req, res) => {
+app.get('/herbs/:name', async(req, res) => {
   const name = req.params.name;
   const data = await client.query('SELECT * from herbs where name=$1'[name]);
 

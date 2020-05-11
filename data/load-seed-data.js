@@ -32,7 +32,7 @@ async function run() {
       })
     );
     
-    console.log('seed data load complete');
+    // console.log('seed data load complete');
   }
   catch(err) {
     console.log(err);
