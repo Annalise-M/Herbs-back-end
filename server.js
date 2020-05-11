@@ -18,9 +18,11 @@ app.get('/herbs', async(req, res) => {
 
 //just ONE Herb
 app.get('/herbs/:name', async(req, res) => {
+  
   const name = req.params.name;
-  const data = await client.query('SELECT * from herbs where name=$1'[name]);
-
+  console.log('name', name);
+  const data = await client.query('SELECT * from herbs where name=$1', [name]);
+  console.log('data', data);
   res.json(data.rows);
 });
 
