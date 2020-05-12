@@ -7,7 +7,7 @@ client.connect();
 
 const app = require('./lib/app');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 //All Herbs
 app.get('/herbs', async(req, res) => {
@@ -27,7 +27,7 @@ app.get('/herbs/:name', async(req, res) => {
 });
 
 //app.post input 
-app.post();
+// app.post();
 
 app.listen(PORT, () => {
   console.log(`Started on ${PORT}`);
