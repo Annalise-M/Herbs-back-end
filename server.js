@@ -26,6 +26,9 @@ app.get('/herbs/:name', async(req, res) => {
   res.json(data.rows);
 });
 
+//app.post input 
+app.post();
+
 app.listen(PORT, () => {
   console.log(`Started on ${PORT}`);
 });
