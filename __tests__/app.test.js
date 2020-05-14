@@ -16,31 +16,41 @@ describe('app routes', () => {
     // TODO: ADD CLOSE DB SCRIPT
   });
 
-  test('returns animals', async() => {
+  test('returns herbs', async() => {
 
     const expectation = [
       {
-        'id': 1,
-        'name': 'bessie',
-        'coolfactor': 3,
-        'owner_id': 1
+        name: 'Lavender',
+        kingdom: 'Plantae',
+        type_species: 'Lavandula spica',
+        cool_factor: 7,
+        poisonous: false,
       },
       {
-        'id': 2,
-        'name': 'jumpy',
-        'coolfactor': 4,
-        'owner_id': 1
+        name: 'Rosemary',
+        kingdom: 'Plantae',
+        type_species: 'Salvia rosmarinus',
+        cool_factor: 7,
+        poisonous: false,
       },
       {
-        'id': 3,
-        'name': 'spot',
-        'coolfactor': 10,
-        'owner_id': 1
+        name: 'Basil',
+        kingdom: 'Plantae',
+        type_species: 'Ocimum basilicum',
+        cool_factor: 6,
+        poisonous: false,
+      },
+      {
+        name: 'Belladonna or Deadly Nightshade',
+        kingdom: 'Plantae',
+        type_species: 'Atropa belladonna',
+        cool_factor: 10,
+        poisonous: true,
       }
     ];
 
     const data = await fakeRequest(app)
-      .get('/animals')
+      .get('/herbs')
       .expect('Content-Type', /json/)
       .expect(200);
 

@@ -6,7 +6,6 @@ const usersData = require('./users.js');
 run();
 
 async function run() {
-
   try {
     await client.connect();
 
@@ -26,15 +25,14 @@ async function run() {
     await Promise.all(
       herbs.map(herb => {
         return client.query(`
-                    INSERT INTO herbs (name, cool_factor, owner_id)
-                    VALUES ($1, $2, $3);
+                    INSERT INTO herbs (name, kingdom, type_species, cool_factor, poisonous, owner_id)
+                    VALUES ($1, $2, $3, $4, $5, $6);
                 `,
         [herb.name, herb.kingdom, herb.type_species, herb.cool_factor, herb.poisonous, user.id]);
       })
     );
     
-
-    console.log('seed data load complete');
+    // console.log('seed data load complete');
   }
   catch(err) {
     console.log(err);
